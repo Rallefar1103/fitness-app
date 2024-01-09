@@ -19,7 +19,7 @@ function HeroBanner() {
           mt: { lg: "80px", xs: "100px" },
         }}
       >
-        Fitness Club
+        Fitness Inspo
       </Typography>
       <Typography
         fontWeight={700}
