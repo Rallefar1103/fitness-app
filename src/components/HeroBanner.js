@@ -6,7 +6,7 @@ function HeroBanner() {
     <Box
       sx={{
         ml: { sm: "50px" },
-        mb: { lg: "200px", xs: "200px" },
+        mb: { lg: "250px", xs: "200px" },
       }}
       position="relative"
       p="20px"
