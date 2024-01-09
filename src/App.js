@@ -7,8 +7,6 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-import HeroBannerImg from "./assets/images/fitness-home-pic.jpg";
-
 import "./App.css";
 
 const App = () => {
