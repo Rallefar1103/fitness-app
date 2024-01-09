@@ -13,9 +13,8 @@ function Home() {
   return (
     <>
       <Box
-        width="400px"
         sx={{
-          width: { xl: "100vw" },
+          width: { lg: "100vw", xs: "100vw" },
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${HeroBannerImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -32,9 +31,8 @@ function Home() {
         />
       </Box>
       <Box
-        width="400px"
         sx={{
-          width: { xl: "100vw" },
+          width: { lg: "100vw", xs: "100vw" },
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${ExercisesBannerImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",

@@ -27,21 +27,26 @@ function Navbar() {
           }}
         />
       </Link>
-      <Stack direction="row" gap="40px" fontSize="24px" alignItems="flex-end">
+      <Stack
+        direction="row"
+        gap="40px"
+        fontSize="24px"
+        alignItems="flex-end"
+        sx={{
+          paddingBottom: "10px",
+        }}
+      >
         <Link
           to="/"
           style={{
             textDecoration: "none",
-            color: "#3A1212",
+            color: "black",
             borderBottom: "3px solid #FF2625",
           }}
         >
           Home
         </Link>
-        <a
-          href="#exercises"
-          style={{ textDecoration: "none", color: "#3A1212" }}
-        >
+        <a href="#exercises" style={{ textDecoration: "none", color: "black" }}>
           Exercises
         </a>
         <Link></Link>
