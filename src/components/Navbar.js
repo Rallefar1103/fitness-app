@@ -12,6 +12,7 @@ function Navbar() {
       sx={{
         gap: { sm: "122px", xs: "40px" },
         justifyContent: "none",
+        backgroundColor: "#F3F3F5",
       }}
       px="20px"
     >
