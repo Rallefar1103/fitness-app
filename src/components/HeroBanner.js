@@ -15,14 +15,23 @@ function HeroBanner() {
       </Typography>
       <Typography
         fontWeight={700}
+        color="white"
         sx={{ fontSize: { lg: "44px", xs: "40px" } }}
       >
         Sweat, Smile <br /> and Repeat
       </Typography>
-      <Typography fontSize="22px" lineHeight="35px" mb={5}>
+      <Typography fontSize="22px" lineHeight="35px" mb={5} color="white">
         Check out the best exercises
       </Typography>
-      <Button variant="contained" color="error" href="#exercises">
+      <Button
+        variant="contained"
+        color="error"
+        href="#exercises"
+        sx={{
+          backgroundColor: "#FF2625",
+          padding: "10px",
+        }}
+      >
         Explore Exercises
       </Button>
     </Box>
