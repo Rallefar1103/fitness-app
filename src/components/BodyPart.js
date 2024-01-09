@@ -2,6 +2,12 @@ import React from "react";
 import { Stack, Typography } from "@mui/material";
 import Icon from "../assets/icons/gym.png";
 
+function capitalizeNewWord(string) {
+  return string.replace(/\b(\w)/g, function (s) {
+    return s.toUpperCase();
+  });
+}
+
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   return (
     <Stack
@@ -12,23 +18,27 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       sx={{
         borderTop: bodyPart === item ? "6px solid #FF2625" : "",
         borderRadius: "20px",
-        background: "#D9D1DB",
-        width: "240px",
-        height: "240px",
+        background: "#F3F3F5",
+        width: "190px",
+        height: "190px",
         cursor: "pointer",
         gap: "47px",
+      }}
+      onClick={() => {
+        setBodyPart(item);
+        window.scrollTo({ top: 1800, left: 100, behavior: "smooth" });
       }}
     >
       <img
         src={Icon}
         alt="dumbbell"
         styles={{
-          width: "40px",
-          height: "40px",
+          width: "20px",
+          height: "20px",
         }}
       />
       <Typography fontSize="20px" fontWeight="500" color="black">
-        {item}
+        {capitalizeNewWord(item)}
       </Typography>
     </Stack>
   );
