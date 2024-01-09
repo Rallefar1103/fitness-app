@@ -6,6 +6,9 @@ import Exercises from "../components/Exercises";
 import HeroBannerImg from "../assets/images/fitness-home-pic.jpg";
 
 function Home() {
+  const [bodyPart, setBodyPart] = useState("all");
+  const [exercises, setExercises] = useState([]);
+
   return (
     <Box
       width="400px"
@@ -21,8 +24,16 @@ function Home() {
       }}
     >
       <HeroBanner />
-      <SearchExercises />
-      <Exercises />
+      <SearchExercises
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
+      <Exercises
+        setExercises={setExercises}
+        bodyPart={bodyPart}
+        setBodyPart={setBodyPart}
+      />
     </Box>
   );
 }
