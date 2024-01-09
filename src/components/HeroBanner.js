@@ -6,11 +6,19 @@ function HeroBanner() {
     <Box
       sx={{
         ml: { sm: "50px" },
+        mb: { lg: "200px", xs: "200px" },
       }}
       position="relative"
       p="20px"
     >
-      <Typography color="#FF2625" fontWeight="600" fontSize="26px">
+      <Typography
+        color="#FF2625"
+        fontWeight="700"
+        fontSize="40px"
+        sx={{
+          mt: { lg: "80px", xs: "100px" },
+        }}
+      >
         Fitness Club
       </Typography>
       <Typography
@@ -18,7 +26,7 @@ function HeroBanner() {
         color="white"
         sx={{ fontSize: { lg: "44px", xs: "40px" } }}
       >
-        Sweat, Smile <br /> and Repeat
+        Sweat, Smile and Repeat
       </Typography>
       <Typography fontSize="22px" lineHeight="35px" mb={5} color="white">
         Check out the best exercises
