@@ -3,7 +3,19 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData, exercisedbUrl } from "../utils/fetchData";
 
 import HorizontalMuscleGroupList from "./HorizontalMuscleGroupList";
+const changeBodyPartNames = (bodyParts) => {
+  bodyParts.forEach((s, index) => {
+    if (s === "upper arms") {
+      bodyParts[index] = "arms";
+    }
 
+    if (s === "upper legs") {
+      bodyParts[index] = "legs";
+    }
+  });
+
+  return bodyParts;
+};
 const filterBodyParts = (parts) => {
   const allowedParts = [
     "chest",
@@ -12,9 +24,11 @@ const filterBodyParts = (parts) => {
     "shoulders",
     "upper arms",
   ];
-  return parts.filter((part) =>
+  let filteredParts = parts.filter((part) =>
     allowedParts.some((allowedPart) => part.toLowerCase().includes(allowedPart))
   );
+
+  return changeBodyPartNames(filteredParts);
 };
 
 function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
@@ -30,6 +44,8 @@ function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
       );
 
       const filteredBodyParts = filterBodyParts(bodyPartsData);
+
+      console.log(filteredBodyParts);
 
       setBodyParts([filteredBodyParts[0], ...filteredBodyParts.slice(1, 5)]);
     };
