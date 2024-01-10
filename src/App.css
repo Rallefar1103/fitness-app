@@ -23,15 +23,14 @@ body {
   .exercise-card {
     width: 400px;
     height: 445px;
-    background: #F3F3F5;
+    background: #C0C0C0;
     border-top: 6px solid #FF2625;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-decoration: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: top;
     flex-direction: column;
-    padding-bottom: 10px;
     transform: scale(1, 1);
     transition: 0.3s all ease-in-out;
   }
