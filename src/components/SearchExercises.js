@@ -2,7 +2,20 @@ import React, { useEffect, useState } from "react";
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData, exercisedbUrl } from "../utils/fetchData";
 
-import HorizontalScrollbar from "./HorizontalScrollbar";
+import HorizontalMuscleGroupList from "./HorizontalMuscleGroupList";
+
+const filterBodyParts = (parts) => {
+  const allowedParts = [
+    "chest",
+    "back",
+    "upper legs",
+    "shoulders",
+    "upper arms",
+  ];
+  return parts.filter((part) =>
+    allowedParts.some((allowedPart) => part.toLowerCase().includes(allowedPart))
+  );
+};
 
 function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
   const [search, setSearch] = useState("");
@@ -16,9 +29,9 @@ function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
         exerciseOptions
       );
 
-      console.log(bodyPartsData);
+      const filteredBodyParts = filterBodyParts(bodyPartsData);
 
-      setBodyParts(["all", ...bodyPartsData]);
+      setBodyParts([filteredBodyParts[0], ...filteredBodyParts.slice(1, 5)]);
     };
 
     fetchExercisesData();
@@ -123,7 +136,7 @@ function SearchExercises({ setExercises, bodyPart, setBodyPart }) {
           p: "20px",
         }}
       >
-        <HorizontalScrollbar
+        <HorizontalMuscleGroupList
           data={bodyParts}
           bodyPart={bodyPart}
           setBodyPart={setBodyPart}

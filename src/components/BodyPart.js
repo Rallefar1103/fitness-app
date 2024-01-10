@@ -19,8 +19,8 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         borderTop: bodyPart === item ? "6px solid #FF2625" : "",
         borderRadius: "20px",
         background: "#F3F3F5",
-        width: "190px",
-        height: "190px",
+        width: "120px",
+        height: "120px",
         cursor: "pointer",
         gap: "47px",
       }}
@@ -33,8 +33,8 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         src={Icon}
         alt="dumbbell"
         styles={{
-          width: "20px",
-          height: "20px",
+          width: "10px",
+          height: "10px",
         }}
       />
       <Typography fontSize="20px" fontWeight="500" color="black">
