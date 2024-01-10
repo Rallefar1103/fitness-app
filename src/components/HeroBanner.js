@@ -6,7 +6,7 @@ function HeroBanner() {
     <Box
       sx={{
         ml: { sm: "50px" },
-        mb: { lg: "250px", xs: "200px" },
+        mb: { lg: "220px", xs: "200px" },
       }}
       position="relative"
       p="20px"
@@ -14,22 +14,22 @@ function HeroBanner() {
       <Typography
         color="#FF2625"
         fontWeight="700"
-        fontSize="40px"
         sx={{
           mt: { lg: "80px", xs: "100px" },
+          fontSize: { lg: "45px", xs: "40px" },
         }}
       >
-        Fitness Inspo
+        Welcome to Fitness Inspo
       </Typography>
       <Typography
         fontWeight={700}
         color="white"
-        sx={{ fontSize: { lg: "44px", xs: "40px" } }}
+        sx={{ fontSize: { lg: "65px", xs: "40px" } }}
       >
         Sweat, Smile and Repeat
       </Typography>
       <Typography fontSize="22px" lineHeight="35px" mb={5} color="white">
-        Check out the best exercises
+        The place to find inspiration for your next workout!
       </Typography>
       <Button
         variant="contained"
