@@ -6,31 +6,58 @@ import Loader from "./Loader";
 const SimilarExercises = ({ targetMuscleExercises }) => {
   let isMusclesNonEmpty = targetMuscleExercises.length !== 0;
   return (
-    <Box mb="25px">
-      <Typography
-        sx={{ fontSize: { lg: "30px", xs: "25px" }, ml: "35px" }}
-        fontWeight={700}
-        color="#000"
-        mb="33px"
-        pl="20px"
-      >
-        Similar{" "}
-        <span style={{ color: "#FF2625", textTransform: "capitalize" }}>
-          Target Muscle
-        </span>{" "}
-        exercises
-      </Typography>
+    <Box
+      sx={{
+        bgcolor: "#1B1D1F",
+        paddingBottom: "20px",
+      }}
+    >
+      {isMusclesNonEmpty ? (
+        <Typography
+          sx={{ fontSize: { lg: "22px", xs: "25px" }, ml: "35px" }}
+          color="white"
+          mb="33px"
+          pl="20px"
+        >
+          Similar{" "}
+          <span
+            style={{
+              color: "#FF2625",
+              textTransform: "capitalize",
+              fontWeight: "700",
+            }}
+          >
+            Target Muscle
+          </span>{" "}
+          exercises
+        </Typography>
+      ) : (
+        <Typography
+          sx={{ fontSize: { lg: "22px", xs: "25px" }, ml: "35px" }}
+          color="white"
+          mb="33px"
+          pl="20px"
+        >
+          Loading similar exercises...
+        </Typography>
+      )}
+
       {isMusclesNonEmpty ? (
         <Stack
           direction="row"
           sx={{
+            paddingLeft: { lg: "30px" },
             gap: { lg: "50px", xs: "30px" },
           }}
           flexWrap="wrap"
           justifyContent="center"
         >
           {targetMuscleExercises.map((item, index) => (
-            <ExerciseCard exercise={item} key={index} />
+            <ExerciseCard
+              exercise={item}
+              key={index}
+              isSimilarExercise={true}
+            />
           ))}
         </Stack>
       ) : (

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 
 import { exerciseOptions, youtubeOptions, fetchData } from "../utils/fetchData";
@@ -13,6 +13,7 @@ const ExerciseDetail = () => {
   const [targetMuscleExercises, setTargetMuscleExercises] = useState([]);
 
   const { id } = useParams();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const fetchExercisesData = async () => {
@@ -40,9 +41,12 @@ const ExerciseDetail = () => {
       setExerciseVideos(exerciseVideoData.contents);
       setTargetMuscleExercises(targetMuscleExercisesData);
     };
-
     fetchExercisesData();
   }, [id]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <Box>

@@ -25,33 +25,39 @@ const Detail = ({ exerciseDetail }) => {
   return (
     <Stack
       sx={{
-        gap: { lg: "250px", xs: "50px" },
+        gap: { lg: "100px", xs: "50px" },
         flexDirection: { lg: "row" },
         pl: "50px",
         pt: "40px",
         pb: "50px",
-        bgcolor: "#9E9E9E",
+        bgcolor: "#1B1D1F",
       }}
     >
       <img src={gifUrl} alt={name} loading="lazy" className="detail-image" />
-      <Stack sx={{ gap: { lg: "45px", xs: "25px" } }}>
+      <Stack sx={{ gap: { lg: "35px", xs: "25px" } }}>
         <Typography
-          sx={{ fontSize: { lg: "64px", xs: "30px" } }}
-          fontWeight={700}
+          sx={{
+            fontSize: { lg: "60px", xs: "30px" },
+            paddingRight: { lg: "20px" },
+          }}
+          fontWeight={500}
           textTransform="capitalize"
-          color="#E61401"
+          color="#F8F8F8"
         >
           {name}
         </Typography>
         <Typography
-          sx={{ fontSize: { lg: "24px", xs: "18px" } }}
-          color="black"
-          fontWeight="500"
+          sx={{
+            fontSize: { lg: "20px", xs: "18px" },
+            paddingRight: { lg: "20px" },
+          }}
+          color="#F8F8F8"
+          fontWeight="200"
         >
           Exercises keep you strong.{" "}
           <span style={{ textTransform: "capitalize" }}>{name}</span> is one of
-          the best <br /> exercises to target your {target}. It will help you
-          improve your mood and gain energy.
+          the best exercises to target your {target}. It will help you improve
+          your mood and gain energy.
         </Typography>
         <Stack
           direction="row"
@@ -66,23 +72,13 @@ const Detail = ({ exerciseDetail }) => {
               gap="24px"
               alignItems="center"
             >
-              <Button
-                sx={{
-                  background: "white",
-                  borderRadius: "50%",
-                  width: "100px",
-                  height: "100px",
-                }}
-              >
-                <img
-                  src={item.icon}
-                  alt={bodyPart}
-                  style={{ width: "50px", height: "50px" }}
-                />
-              </Button>
               <Typography
                 textTransform="capitalize"
-                sx={{ fontSize: { lg: "25px", xs: "20px" } }}
+                sx={{
+                  fontSize: { lg: "20px", xs: "20px" },
+
+                  color: "white",
+                }}
               >
                 {item.name}
               </Typography>

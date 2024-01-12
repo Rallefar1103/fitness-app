@@ -3,43 +3,54 @@ import { Box, Stack, Typography } from "@mui/material";
 import Loader from "./Loader";
 
 const ExerciseVideos = ({ exerciseVideos, name }) => {
-  if (!exerciseVideos.length)
-    return (
-      <Box alignContent="center" alignItems="center">
-        <Loader />
-      </Box>
-    );
   return (
     <Box
       sx={{
-        marginTop: { lg: "20px", xs: "20px" },
-        marginLeft: { lg: "35px", xs: "20px" },
+        bgcolor: "#1B1D1F",
       }}
       p="20px"
     >
-      <Typography
-        mb="33px"
-        sx={{
-          fontSize: { lg: "22px" },
-        }}
-      >
-        Watch{" "}
-        <span
-          style={{
-            color: "#ff2625",
-            textTransform: "capitalize",
-            fontWeight: "700",
+      {!exerciseVideos.length ? (
+        <Typography
+          mb="33px"
+          ml="33px"
+          sx={{
+            fontSize: { lg: "22px" },
+            color: "white",
           }}
         >
-          {name}
-        </span>{" "}
-        exercise videos for more details!
-      </Typography>
+          Loading your videos...
+        </Typography>
+      ) : (
+        <Typography
+          mb="33px"
+          ml="33px"
+          sx={{
+            fontSize: { lg: "22px" },
+            color: "white",
+          }}
+        >
+          Watch{" "}
+          <span
+            style={{
+              color: "#ff2625",
+              textTransform: "capitalize",
+              fontWeight: "700",
+            }}
+          >
+            {name}
+          </span>{" "}
+          exercise videos for more details!
+        </Typography>
+      )}
+
       <Stack
         alignItems="center"
         sx={{
+          paddingLeft: { lg: "30px" },
           flexDirection: { lg: "row" },
-          gap: { lg: "90px", xs: "0" },
+          gap: { lg: "60px", xs: "0" },
+          paddingBottom: { lg: "50px" },
         }}
       >
         {exerciseVideos?.slice(0, 3)?.map((item, index) => (
@@ -51,7 +62,10 @@ const ExerciseVideos = ({ exerciseVideos, name }) => {
             rel="noreferrer"
           >
             <img
-              style={{ borderTopLeftRadius: "20px" }}
+              style={{
+                borderTopLeftRadius: "20px",
+                border: "2px solid white",
+              }}
               src={item.video.thumbnails[0].url}
               alt={item.video.title}
             />
