@@ -5,6 +5,16 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 import ExerciseCard from "./ExerciseCard";
 
+const convertBodyPartToCorrectString = (bodyPart) => {
+  if (bodyPart === "arms") {
+    return "upper arms";
+  }
+
+  if (bodyPart === "legs") {
+    return "upper legs";
+  }
+};
+
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 10;

@@ -7,6 +7,17 @@ import LegsIcon from "../assets/icons/legs.png";
 import ShouldersIcon from "../assets/icons/shoulder.png";
 import DefaultLogo from "../assets/icons/gym.png";
 
+function displayMuscleGroup(string) {
+  var parts = string.split(" ");
+
+  if (parts.length > 0) {
+    var splitString = parts[parts.length - 1];
+    return capitalizeNewWord(splitString);
+  }
+
+  return capitalizeNewWord(string);
+}
+
 function capitalizeNewWord(string) {
   return string.replace(/\b(\w)/g, function (s) {
     return s.toUpperCase();
@@ -17,8 +28,8 @@ const iconPaths = {
   chest: ChestIcon,
   back: BackIcon,
   shoulders: ShouldersIcon,
-  arms: ArmsIcon,
-  legs: LegsIcon,
+  "upper arms": ArmsIcon,
+  "upper legs": LegsIcon,
 };
 
 const getIconPath = (muscleGroup) => {
@@ -63,7 +74,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         textAlign="center"
         color="black"
       >
-        {capitalizeNewWord(item)}
+        {displayMuscleGroup(item)}
       </Typography>
     </Stack>
   );
